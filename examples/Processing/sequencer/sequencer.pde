@@ -69,12 +69,16 @@ void setup()
   dots = new PImage[] { imgOrangeDot, imgPurpleDot, imgPinkDot, imgGreenDot };
 
   // Connect to the local instance of fcserver. You can change this line to connect to another computer's fcserver
-  opc = new OPC(this, "127.0.0.1", 7890);
+  opc = new OPC(this, "192.168.7.2", 7890);
 
   // Three 8x8 grids side by side
-  opc.ledGrid8x8(0, ledX, ledY, ledSpacing, 0);
+/*
+opc.ledGrid8x8(0, ledX, ledY, ledSpacing, 0);
   opc.ledGrid8x8(64, ledX - ledSpacing * 8, ledY, ledSpacing, 0);
   opc.ledGrid8x8(128, ledX + ledSpacing * 8, ledY, ledSpacing, 0);
+*/
+opc.ledGrid(0, 32, 16, ledX, ledY, ledSpacing, ledSpacing, 0, false );
+
   opc.showLocations(true);
   
   // Init timekeeping, start the pattern from the beginning

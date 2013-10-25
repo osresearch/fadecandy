@@ -16,12 +16,15 @@ void setup() {
   effect = loadShader("effect.glsl");
   effect.set("resolution", float(width), float(height));
 
-  opc = new OPC(this, "127.0.0.1", 7890);
-  float spacing = height / 16.0;
-  opc.ledGrid8x8(0, width/2, height/2, spacing, 0);
+  opc = new OPC(this, "192.168.9.2", 7890);
+  float spacing = height / 32.0;
+/*
+opc.ledGrid8x8(0, width/2, height/2, spacing, 0);
   opc.ledGrid8x8(64, width/2 - spacing * 8, height/2, spacing, 0);
   opc.ledGrid8x8(128, width/2 + spacing * 8, height/2, spacing, 0);
-  opc.showLocations(true);
+*/
+opc.ledGrid(0, 32, 8, width/2, height/2, spacing, spacing, 0, false );
+opc.showLocations(true);
   
   // Initial color correction settings
   mouseMoved();
